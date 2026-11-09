@@ -36,7 +36,7 @@
 
 | 文件 | 内容 |
 | --- | --- |
-| [`media/concept-demo.mp4`](media/concept-demo.mp4) | 概念演示片（27 MB）：笔电里两颗光球在两条跑道上跑、涨速、张翅飞走 |
+| [`media/concept-demo.mp4`](media/concept-demo.mp4) | 概念演示片（29 MB）：笔电里两颗光球在两条跑道上跑、涨速、张翅飞走 |
 
 > 仓库里这个 MP4 就是开场动画那条片子。如果只想看图，`docs/cards-ink/` 里有六张竖版图文。
 
