@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>lumo · 本周工伤鉴定报告</title>
+  <link rel="stylesheet" href="report.css" />
+</head>
+<body>
+  <div class="card">
+    <header>
+      <div>
+        <h1 id="headTitle">本周工伤鉴定报告</h1>
+        <p id="headSub">—</p>
+      </div>
+      <button class="close" id="close" title="关闭">×</button>
+    </header>
+
+    <!-- 1. 未到周五 -->
+    <main id="locked" class="pane hidden">
+      <div class="lock-mark"></div>
+      <h2>报告还没写</h2>
+      <p>每周五才会开箱一次，把这一周的你装进去。</p>
+      <div class="countdown" id="countdown">—</div>
+      <span class="tiny">现在开始攒，还来得及</span>
+    </main>
+
+    <!-- 2. 待开箱 -->
+    <main id="boxPane" class="pane hidden">
+      <div class="box-wrap">
+        <div class="box" id="box">
+          <div class="lid"></div>
+          <div class="glow"></div>
+          <span class="q">?</span>
+        </div>
+        <p class="box-hint">本周的盒子已经封好了</p>
+        <button class="primary" id="openBtn">开箱</button>
+      </div>
+    </main>
+
+    <!-- 3. 报告 -->
+    <main id="reportPane" class="pane hidden">
+      <div class="rank">
+        <div class="rank-label" id="rankLabel">—</div>
+        <div class="rank-sub" id="rankSub">—</div>
+      </div>
+
+      <div class="grid" id="grid"></div>
+
+      <div class="bars-wrap">
+        <div class="bars-title">本周星点</div>
+        <div class="bars" id="bars"></div>
+      </div>
+
+      <div class="verdict" id="verdict"></div>
+
+      <div class="stamp">已鉴定</div>
+    </main>
+
+    <footer>
+      <span id="footNote">lumo · 只记录，不评价（大概）</span>
+      <button class="ghost" id="footBtn">收起</button>
+    </footer>
+  </div>
+  <script src="report.js"></script>
+</body>
+</html>

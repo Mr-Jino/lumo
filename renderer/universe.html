@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>lumo · 个人宇宙</title>
+  <link rel="stylesheet" href="universe.css" />
+</head>
+<body>
+  <div class="card drag-area">
+    <header>
+      <div>
+        <h1>个人宇宙</h1>
+        <p id="sub">正在观测…</p>
+      </div>
+      <button class="close" id="close" title="关闭">×</button>
+    </header>
+
+    <main id="sky">
+      <div class="nebula n1"></div>
+      <div class="nebula n2"></div>
+      <div id="rings"></div>
+      <div id="stars"></div>
+      <div id="empty" class="empty hidden">
+        <div class="empty-ring"></div>
+        <p>还没有星点</p>
+        <span>跑满一条跑道，它就会扑着翅膀飞到这里</span>
+      </div>
+    </main>
+
+    <footer>
+      <span class="legend" id="legend"></span>
+      <span class="hint">点一颗星，看它的英雄卡片</span>
+    </footer>
+
+    <!-- 悬停提示 -->
+    <div id="tip" class="tip hidden"></div>
+
+    <!-- 英雄卡片 -->
+    <div id="cardLayer" class="card-layer hidden">
+      <div class="hero" id="hero">
+        <div class="eyebrow" id="heroEyebrow"></div>
+        <h2 id="heroTitle"></h2>
+        <p class="flavor" id="heroFlavor"></p>
+        <div class="stats" id="heroStats"></div>
+        <div class="hero-foot">
+          <span>这枚星点已被收藏</span>
+          <button class="ghost" id="heroClose">收起</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="universe.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+{
+  "name": "lumo",
+  "version": "0.1.0",
+  "description": "任务栏上的两只打工光点 · two little dots racing on your Windows taskbar",
+  "author": "Jino",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "dependencies": {
+    "uiohook-napi": "^1.5.5"
+  },
+  "devDependencies": {
+    "electron": "^33.2.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "com.lumo.dots",
+    "productName": "lumo",
+    "npmRebuild": false,
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json",
+      "node_modules/uiohook-napi/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "lumo"
+    }
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mr-Jino/lumo.git"
+  },
+  "homepage": "https://github.com/Mr-Jino/lumo#readme",
+  "keywords": [
+    "electron",
+    "windows",
+    "taskbar",
+    "desktop-toy",
+    "keystroke",
+    "uiohook"
+  ]
+}

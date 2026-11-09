@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <title>lumo 设置</title>
+  <link rel="stylesheet" href="settings.css" />
+</head>
+<body>
+  <div class="card">
+    <header class="drag">
+      <div class="brand">
+        <span class="logo"><i class="d1"></i><i class="d2"></i></span>
+        <div>
+          <h1>lumo</h1>
+          <p>两只打工光点</p>
+        </div>
+      </div>
+      <button class="close" id="close" title="关闭">×</button>
+    </header>
+
+    <main>
+      <section>
+        <h2>跑道</h2>
+        <div class="row">
+          <label>键盘跑道长度<span class="hint">击键数，跑满即飞走</span></label>
+          <div class="ctrl">
+            <input type="range" id="kbTrackLength" min="500" max="10000" step="100" />
+            <output id="kbTrackLength_out"></output>
+          </div>
+        </div>
+        <div class="row">
+          <label>鼠标跑道长度<span class="hint">点击 + 滚轮次数</span></label>
+          <div class="ctrl">
+            <input type="range" id="mouseTrackLength" min="300" max="6000" step="100" />
+            <output id="mouseTrackLength_out"></output>
+          </div>
+        </div>
+        <div class="row">
+          <label>跟随平滑度<span class="hint">越小跟得越紧，越大越飘</span></label>
+          <div class="ctrl">
+            <input type="range" id="easeTau" min="30" max="300" step="10" />
+            <output id="easeTau_out"></output>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>颜色</h2>
+        <div class="row colors">
+          <label>键盘光点</label>
+          <div class="ctrl">
+            <input type="color" id="kbColor" />
+            <span class="hex" id="kbColor_hex"></span>
+          </div>
+        </div>
+        <div class="row colors">
+          <label>鼠标光点</label>
+          <div class="ctrl">
+            <input type="color" id="mouseColor" />
+            <span class="hex" id="mouseColor_hex"></span>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>节奏</h2>
+        <div class="row">
+          <label>金色庆祝<span class="hint">连续输入多久变金色</span></label>
+          <div class="ctrl">
+            <input type="range" id="goldAfterMin" min="1" max="10" step="0.5" />
+            <output id="goldAfterMin_out"></output>
+          </div>
+        </div>
+        <div class="row">
+          <label>哈欠起点<span class="hint">闲置多久开始嫌弃你</span></label>
+          <div class="ctrl">
+            <input type="range" id="yawnAfterSec" min="30" max="600" step="10" />
+            <output id="yawnAfterSec_out"></output>
+          </div>
+        </div>
+        <div class="row">
+          <label>沉睡阈值<span class="hint">无输入多久算一场结束</span></label>
+          <div class="ctrl">
+            <input type="range" id="sleepAfterMin" min="10" max="180" step="5" />
+            <output id="sleepAfterMin_out"></output>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>启动</h2>
+        <div class="row">
+          <label>开机自启<span class="hint">登录 Windows 后自动亮起两道跑道</span></label>
+          <div class="ctrl">
+            <button class="switch" id="autostart" role="switch" aria-checked="false" title="开机自启">
+              <i></i>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="danger">
+        <h2>危险区</h2>
+        <div class="danger-row">
+          <div>
+            <strong>清零当前跑道</strong>
+            <span class="hint">两条跑道的进度回到起点，已收藏的星点不受影响</span>
+          </div>
+          <button class="ghost" id="resetTrack">清零</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <button class="ghost" id="defaults">恢复默认</button>
+      <button class="primary" id="save">保存并应用</button>
+    </footer>
+    <div class="toast" id="toast">已保存</div>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>

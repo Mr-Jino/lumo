@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="stage">
+    <div class="track" id="track-kb">
+      <div class="fill"></div>
+      <div class="finish-line"></div>
+      <div class="dot" id="dot-kb">
+        <span class="tail"></span>
+        <span class="core">
+          <span class="wing l"></span>
+          <span class="wing r"></span>
+        </span>
+      </div>
+    </div>
+    <div class="track" id="track-mouse">
+      <div class="fill"></div>
+      <div class="finish-line"></div>
+      <div class="dot" id="dot-mouse">
+        <span class="tail"></span>
+        <span class="core">
+          <span class="wing l"></span>
+          <span class="wing r"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <script src="renderer.js"></script>
+</body>
+</html>
