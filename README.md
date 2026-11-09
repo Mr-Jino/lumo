@@ -6,6 +6,8 @@
 
 ![跑光 lumo](docs/banner.png)
 
+**[⬇ 下载绿色版](https://github.com/Mr-Jino/lumo/releases/latest)**　解压到任意文件夹，双击 `lumo.exe`，不用安装。
+
 ---
 
 ## 它是什么
@@ -69,6 +71,17 @@ npx electron-builder --win dir
 > ⚠️ 如果启动后只有进程没有窗口，检查环境里是不是带了 `ELECTRON_RUN_AS_NODE=1`——那会让 Electron 退化成纯 Node。启动前 `unset ELECTRON_RUN_AS_NODE` 即可。
 
 > ⚠️ NSIS 安装包在非管理员账户下可能打包失败（`winCodeSign.7z` 里有 macOS 符号链接，创建需要特权）。绿色版不受影响。
+
+> ⚠️ 如果卡在 `signApp ... ERR_ELECTRON_BUILDER_CANNOT_EXECUTE`，是同一个符号链接问题（electron-builder 要解 winCodeSign 里的 `rcedit`）。绕过办法是先跳过改 exe 资源、再自己补图标和版本号：
+>
+> ```bash
+> npx electron-builder --win dir -c.win.signAndEditExecutable=false
+> 7za x winCodeSign.7z -o./wcs -xr'!darwin'      # 只解 Windows 那一半
+> ./wcs/rcedit-x64.exe dist/win-unpacked/lumo.exe --set-icon assets/icon.ico \
+>   --set-version-string ProductName lumo --set-file-version 0.1.0.0
+> ```
+>
+> 发布包就是这么打出来的。
 
 ---
 
